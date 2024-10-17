@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile page</title>
+    <link rel="stylesheet" href="profile.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to fetch user profile data and connection history
+            fetch('/profile-data')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update profile fields with fetched data
+                        const profile = data.profile;
+                        document.querySelector('input[placeholder="Your name"]').value = profile.name || '';
+                        document.querySelector('input[placeholder="Your age"]').value = profile.age || '';
+                        document.getElementById('gender').value = profile.gender || 'Male';
+                        document.getElementById('stage').value = profile.stage || 'Stage 1';
+                        document.getElementById('yesno').value = profile.yesno || 'No';
+                        document.querySelector('textarea[name="Description"]').value = profile.description || '';
+
+                        // Update connection history display
+                        const historyList = document.getElementById('history-list');
+                        if (profile.history && profile.history.length > 0) {
+                            profile.history.forEach(entry => {
+                                const listItem = document.createElement('li');
+                                listItem.textContent = `Device connected at ${entry.time} on port ${entry.port}`;
+                                historyList.appendChild(listItem);
+                            });
+                        } else {
+                            historyList.innerHTML = '<li>No connection history found.</li>';
+                        }
+                    } else {
+                        alert('Error fetching profile data');
+                    }
+                });
+            
+            // Handle profile form submission
+            document.getElementById('sub-button').addEventListener('click', function(event) {
+                event.preventDefault();
+                const name = document.querySelector('input[placeholder="Your name"]').value;
+                const age = document.querySelector('input[placeholder="Your age"]').value;
+                const gender = document.getElementById('gender').value;
+                const stage = document.getElementById('stage').value;
+                const yesno = document.getElementById('yesno').value;
+                const description = document.querySelector('textarea[name="Description"]').value;
+
+                fetch('/profile', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        age,
+                        gender,
+                        stage,
+                        yesno,
+                        description
+                    })
+                }).then(response => response.json()).then(data => {
+                    if (data.success) {
+                        alert('Profile updated successfully');
+                    } else {
+                        alert('Error updating profile');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <div class="nav">
+            <a href="index.html"><button>Home</button></a>
+            <a href="aboutus.html"><button>About us</button></a>
+            <a href="connect.html"><button>Connect</button></a>
+            <a href="profile.html"><button>Profile</button></a>
+            <a href="signup.html"><button id="signup-btn">Sign up</button></a>
+            <a href="/logout"><button id="logout-btn" style="display: none;">Logout</button></a>
+        </div>
+        <div class="writing">
+            <div class="content">
+                <h1>Profile</h1>
+                <br>
+                <p>Let us know more about you.</p>
+                <br>
+                <h4>Name</h4>
+                <input type="text" placeholder="Your name">
+                <h4>Age</h4>
+                <input type="number" placeholder="Your age">
+                <h4>Gender</h4>
+                <select name="Gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <h4>Your tremor stage</h4>
+                <select name="stage" id="stage">
+                    <option value="Stage 1">Stage 1</option>
+                    <option value="Stage 2">Stage 2</option>
+                    <option value="Stage 3">Stage 3</option>
+                </select>
+                <h4>Any tremor related disorder?</h4>
+                <select name="yesno" id="yesno">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <h4>If your earlier response was "yes", then describe</h4>
+                <textarea name="Description" placeholder="Description"></textarea><br>
+                <input type="submit" value="Submit" id="sub-button">
+                <h4>Connection History</h4>
+                <ul id="history-list">
+                    <!-- History entries will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+        <div class="foot"></div>
+    </div>
+</body>
+</html>

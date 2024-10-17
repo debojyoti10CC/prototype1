@@ -1,0 +1,137 @@
+/* Footer Styling with Animated Gradient Background */
+footer {
+    background: linear-gradient(45deg, #004d40, #00695c, #00796b, #004d40);
+    background-size: 400% 400%; /* To create the animated transition */
+    animation: gradientAnimation 10s ease infinite; /* Smooth animation for the background */
+    color: #76ff03; /* Neon green */
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    opacity: 0; /* For fade-in effect */
+    animation: fadeInFooter 1.5s forwards; /* Fade-in animation */
+}
+
+/* Animated gradient keyframes */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Fade-in animation for footer */
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Connect with Us Form */
+.connect-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00e676; /* Subtle neon glow */
+}
+
+.connect-form form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.connect-form .neon-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #76ff03;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.connect-form .neon-input::placeholder {
+    color: #76ff03;
+}
+
+.connect-form .neon-input:focus {
+    border-bottom: 2px solid #00e676; /* Brighter neon on focus */
+}
+
+/* Submit Button without Glow */
+.connect-form .neon-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00e676;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
+}
+
+.connect-form .neon-button:hover {
+    font-size: 1.2rem; /* Increase font size on hover */
+}
+
+/* Social Media Icons */
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media a {
+    margin: 0 15px;
+    font-size: 2rem;
+    color: #76ff03; /* Neon green */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #00e676; /* Brighter neon on hover */
+    transform: scale(1.2); /* Slight scale effect on hover */
+}
+
+/* Team Members Section */
+.team-members {
+    margin-top: 20px;
+    color: #76ff03;
+    font-size: 1.1rem;
+    text-shadow: none; /* Removed glow */
+}
+
+/* Removed glow from Social Media icons and Copyright */
+.connect-form h2,
+.copyright p {
+    text-shadow: none; /* Removed glow */
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #76ff03;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .connect-form form, .social-media {
+        max-width: 100%;
+    }
+
+    .social-media a {
+        font-size: 1.5rem;
+        margin: 10px;
+    }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect page</title>
+    <link rel="stylesheet" href="connect.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/session')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.loggedIn) {
+                        document.getElementById('signup-btn').style.display = 'none';
+                        document.getElementById('logout-btn').style.display = 'inline-block';
+                    } else {
+                        document.getElementById('signup-btn').style.display = 'inline-block';
+                        document.getElementById('logout-btn').style.display = 'none';
+                    }
+                });
+
+            let port;
+            let reader;
+            let collectedData = [];
+
+            document.getElementById('connect-btn').addEventListener('click', async () => {
+                try {
+                    port = await navigator.serial.requestPort();
+                    await port.open({ baudRate: 9600 });
+
+                    const textDecoder = new TextDecoderStream();
+                    const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
+                    reader = textDecoder.readable.getReader();
+
+                    document.getElementById('status').innerText = 'Connected to device';
+
+                    // Record connection history
+                    recordConnectionHistory(port);
+
+                    readLoop();
+                } catch (error) {
+                    console.error('There was an error opening the serial port:', error);
+                }
+            });
+
+            async function readLoop() {
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) {
+                        console.log('[readLoop] DONE', done);
+                        reader.releaseLock();
+                        break;
+                    }
+                    if (value) {
+                        console.log('[readLoop] Value:', value);
+                        collectedData.push(value.trim());
+                    }
+                }
+            }
+
+            document.getElementById('generate-pdf').addEventListener('click', async () => {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // Constructing the data string for PDF
+                let dataString = collectedData.join('\n');
+                
+                // Adding text to PDF
+                doc.text(dataString, 10, 10);
+                
+                // Saving the PDF
+                doc.save('report.pdf');
+            });
+
+            // Function to record connection history
+            async function recordConnectionHistory(port) {
+                const time = new Date().toLocaleString();
+                const historyEntry = { port, time };
+
+                await fetch('/history', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(historyEntry)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('Connection history recorded successfully');
+                    } else {
+                        console.error('Error recording connection history');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error recording connection history:', error);
+                });
+            }
+
+            // Fetch and display connection history
+            fetch('/history')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const historyList = document.getElementById('history-list');
+                        historyList.innerHTML = ''; // Clear previous entries
+                        data.history.forEach(entry => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = `Port: ${entry.port}, Time: ${entry.time}`;
+                            historyList.appendChild(listItem);
+                        });
+                    } else {
+                        console.error('Failed to fetch connection history:', data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching connection history:', error);
+                });
+        });
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-brand">STEADYSTRIDE</div>
+                <ul class="navbar-menu">
+                    <li><a href="d1.html" >Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="connect.html"class="active">Connect</a></li>
+                    <li><a href="report.html">Report</a></li>
+                    <li><a href="signin.html">Logout</a></li>
+                </ul>
+                <div class="navbar-user">User Profile</div>
+            </div>
+        </nav>
+        <div class="writing">
+            <div class="content">
+                <h1>Connect</h1>
+                <br>
+                <p>Connect to your device</p>
+                <button class="con" id="connect-btn">Connect via Bluetooth</button>
+                <p id="status">Status: Not connected</p>
+                <button id="generate-pdf">Generate PDF</button>
+                <br><br>
+                <h2>Connection History</h2>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+        <div class="foot"></div>
+    </div>
+</body>
+</html>

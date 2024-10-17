@@ -1,0 +1,356 @@
+/* Records Section */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    height: 648px;
+    width: 100%;
+    background-image: url("hero_1.png");
+    background-size: cover;
+}
+
+.navbar {
+    background-color: #1a1a2e;
+    width: 100%;
+    padding: 15px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: #e94560;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-menu li a.active {
+    border-bottom: 2px solid #e94560;
+}
+
+.navbar-user {
+    color: #ffffff;
+}
+
+.writing {
+    height: 250px;
+    width: 40%;
+    display: flex;
+    justify-content: left;
+    color: #0A5247;
+    padding-left: 140px;
+    padding-top: 9%;
+}
+
+p {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.foot {
+    height: 32px;
+    background-color: #A3C468;
+    margin-top: 24.2%;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+#steadystride-text {
+    font-size: 36px;
+    color: #1a1a2e;
+    position: relative;
+    overflow: hidden;
+    border-right: .15em solid #e94560;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink .5s step-end infinite alternate;
+}
+
+/* Keyframes for Typing Effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #e94560; }
+}
+
+/* Records Section */
+.records {
+    background-color: #e8f5e9; /* Light greenish-gray to blend with the theme */
+    padding: 20px;
+    text-align: center;
+    height: 1600;
+}
+
+.records-title {
+    font-size: 28px;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.records-caption {
+    font-size: 18px;
+    color: #1a1a2e;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.record-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.record-image {
+    width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for blending */
+    transition: transform 0.3s;
+}
+
+.record-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Section Separation */
+.records {
+    margin-top: 20px;
+    padding: 40px 20px;
+    border-top: 5px solid #A3C468; /* Greenish border for a smooth transition */
+}
+/* Review Section */
+/* Review Section */
+.review-section {
+    background-color: #f7f2e7; /* Slightly darker greenish background */
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-top: 5px solid #A3C468; /* Border to transition from Records section */
+}
+
+.review-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 20px;
+}
+
+.review-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    margin-right: 20px;
+}
+
+.review-content {
+    max-width: 600px;
+}
+
+.reviewer-name {
+    font-size: 22px;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.review-text {
+    font-size: 18px;
+    color: #154e3b; /* Darker green for readability */
+    line-height: 1.6;
+}
+
+/* Video Embed Container */
+.video-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.video-container iframe {
+    width: 80%;
+    max-width: 720px;
+    height: 405px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for video */
+}
+footer {
+    background-color: #483d8b;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    opacity: 0; /* For fade-in effect */
+    animation: fadeInFooter 1.5s forwards; /* Fade-in animation */
+    border-top-left-radius: 0; /* No rounded corners */
+border-top-right-radius: 0; /* No rounded corners */
+
+}
+
+/* Keep the existing keyframes for animations */
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Connect with Us Form */
+.connect-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00e676; /* Subtle neon glow */
+}
+
+.connect-form form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.connect-form .neon-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #76ff03;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.connect-form .neon-input::placeholder {
+    color: #76ff03;
+}
+
+.connect-form .neon-input:focus {
+    border-bottom: 2px solid #00e676; /* Brighter neon on focus */
+}
+
+/* Submit Button without Glow */
+.connect-form .neon-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00e676;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: font-size 0.3s ease;
+}
+
+.connect-form .neon-button:hover {
+    font-size: 1.2rem; /* Increase font size on hover */
+}
+
+/* Social Media Icons */
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media a {
+    margin: 0 15px;
+    font-size: 2rem;
+    color: #76ff03; /* Neon green */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #00e676; /* Brighter neon on hover */
+    transform: scale(1.2); /* Slight scale effect on hover */
+}
+
+/* Team Members Section */
+.team-members {
+    margin-top: 20px;
+    color: #76ff03;
+    font-size: 1.1rem;
+    text-shadow: none; /* Removed glow */
+}
+
+/* Removed glow from Social Media icons and Copyright */
+.connect-form h2,
+.copyright p {
+    text-shadow: none; /* Removed glow */
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #76ff03;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .connect-form form, .social-media {
+        max-width: 100%;
+    }
+
+    .social-media a {
+        font-size: 1.5rem;
+        margin: 10px;
+    }
+}
+/* Chat Button */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #1477d9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+  
+  #chat-button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .chat-button img {
+    width: 60%; /* Resize icon inside */
+    height: 60%;
+    filter: brightness(0) invert(1); /* Optional: make white icon for better contrast */
+  }
+  
+  

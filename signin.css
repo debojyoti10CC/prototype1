@@ -1,0 +1,112 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #003b3b; /* Deep green */
+    color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff0d;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Styling */
+.logo img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-container {
+    margin-top: 10px;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #f4f4f4;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #7a9e9e;
+    background-color: #f0f0f0;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007575;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #005353;
+}
+
+/* Links Styling */
+.links {
+    margin-top: 10px;
+}
+
+.links a {
+    color: #87c1c1;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #ffffff;
+}
+
+.theme-toggle label {
+    cursor: pointer;
+}
+/* Additional Styling for Instructional Text */
+.info-text {
+    font-size: 14px;
+    color: #cfcfcf;
+    margin-bottom: 15px;
+}

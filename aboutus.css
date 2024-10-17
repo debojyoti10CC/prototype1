@@ -1,0 +1,140 @@
+.timeline {
+    position: relative;
+    padding: 40px 0; /* Space above and below the timeline */
+    border-top: 2px solid #0A5247; /* Line for the timeline */
+    margin: 20px 0; /* Space around the timeline */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the timeline */
+}
+
+.timeline-year {
+    position: absolute;
+    top: -40px; /* Position it above the line */
+    font-weight: bold;
+    font-size: 24px; /* Year font size */
+    color: #0A5247; /* Color for the year */
+    margin-left: -25px; /* Adjust to center year over the line */
+}
+
+.timeline-event {
+    width: 200px; /* Width of the event container */
+    position: relative; /* Allow positioning of events */
+    padding: 10px;
+    border-radius: 6px; /* Rounded corners for events */
+    background-color: #fff; /* Background for events */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    margin: 0 10px; /* Space around events */
+}
+
+.timeline-event.top {
+    transform: translateY(-20px); /* Move event above the line */
+}
+
+.timeline-event.bottom {
+    transform: translateY(20px); /* Move event below the line */
+}
+
+.timeline-event:nth-child(odd) {
+    margin-top: -30px; /* Adjust for odd events to move up */
+}
+
+.timeline-event:nth-child(even) {
+    margin-bottom: -30px; /* Adjust for even events to move down */
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    height: 400px;
+    width: 100%;
+    background-color: #FFF9F9;
+}
+
+.navbar {
+    background-color: #1a1a2e;
+    width: 100%;
+    padding: 15px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: #e94560;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-menu li a.active {
+    border-bottom: 2px solid #e94560;
+}
+
+.navbar-user {
+    color: #ffffff;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.writing {
+    width: 50%;
+    color: #0A5247;
+}
+
+.writing h1 {
+    margin-bottom: 20px;
+}
+
+.writing p {
+    font-size: 20px;
+    margin-bottom: 16px; /* Add space between paragraphs */
+}
+
+.foot {
+    height: 32px;
+    background-color: #A3C468;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .writing, .picture {
+        width: 100%; /* Make each section full width on smaller screens */
+        text-align: center; /* Center align text on smaller screens */
+    }
+
+    .picture {
+        margin-top: 20px; /* Add some space above the image */
+    }
+}

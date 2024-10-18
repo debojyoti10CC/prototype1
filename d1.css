@@ -354,3 +354,18 @@ border-top-right-radius: 0; /* No rounded corners */
   }
   
   
+.pp{
+    background-image: url(pp2.png);
+    height: 40px;
+    width: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -40px;
+    margin-left: 20px;
+  }
+
+.profile{
+    margin-top: 50px;
+  
+    
+  }

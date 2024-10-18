@@ -1,70 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <div class="navbar">
+        <div class="navbar_panel1">
+            <div class="navbar_logo"></div>
+            <div class="searchicon">
+                <i class="fa-solid fa-magnifying-glass" ></i>
+            </div>
+            <div class="searchbox"><input placeholder="search" id="searchwindow">
+            </div>
+        </div>
+        <div class="navbar_tabs">
+            <a href="dashboard.html" class="navbar_items">Home</a> 
+            <a href="Aboutus.html" class="navbar_items">About Us</a>
+            <a href="attachments.html" class="navbar_items">My Attachments</a>
+            <a href="gallery.html" class="navbar_items">Gallery</a>
+            <a href="events.html" class="navbar_items">Events</a>
+            <a href="notifications.html" class="navbar_items">Notifications</a>
+        </div>
+        <div class="profile">
+            <div class="pp"></div>
+            <div class="profile_caption"><a href="profile.html" class="profClass">My Account</a>
+            </div>
+        </div>
+    </div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="aboutus.css">
+    <title>About Us - IEM-UEM Group</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="logo.jpeg">
 </head>
 <body>
-    <div class="hero">
-        <nav class="navbar">
-            <div class="navbar-container">
-                <div class="navbar-brand">STEADYSTRIDE</div>
-                <ul class="navbar-menu">
-                    <li><a href="d1.html">Home</a></li>
-                    <li><a href="aboutus.html" class="active">About Us</a></li>
-                    <li><a href="connect.html">Connect</a></li>
-                    <li><a href="report.html">Report</a></li>
-                    <li><a href="signin.html">Logout</a></li>
+    <div class="about-container">
+        <section class="hero-section">
+            <div class="overlay">
+                <h1>Welcome to the IEM-UEM Group</h1>
+                <p>A Legacy of Excellence in Engineering, Management, and Beyond</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="intro">
+                <h2>About Us</h2>
+                <p>The Institute of Engineering and Management (IEM) is part of the prestigious IEM-UEM group, a pioneer in providing world-class education in engineering, management, and sciences. Our focus is on holistic development, preparing students to meet global standards in their respective fields.</p>
+            </div>
+
+            <div class="core-values">
+                <h2>Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fa-solid fa-award"></i>
+                        <h3>Excellence</h3>
+                        <p>Striving to provide the highest quality of education, fostering innovation and creativity.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-globe"></i>
+                        <h3>Global Impact</h3>
+                        <p>Equipping students with skills to make a positive impact on a global scale.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <h3>Student Success</h3>
+                        <p>Empowering students to reach their full potential through comprehensive support.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-handshake"></i>
+                        <h3>Integrity</h3>
+                        <p>Upholding the highest standards of ethics and integrity in all our endeavors.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h2>Our Achievements</h2>
+                <p>The IEM-UEM group has been recognized nationally and internationally for its contributions to education and research.</p>
+                <ul>
+                    <li>Ranked among the top engineering colleges in India.</li>
+                    <li>International partnerships with over 50 institutions worldwide.</li>
+                    <li>Multiple awards in research and innovation.</li>
+                    <li>Over 90% placement rate consistently for the past 10 years.</li>
                 </ul>
-                <div class="navbar-user">User Profile</div>
             </div>
-        </nav>
-      
-        <div class="content-container">
-            <div class="writing">
-                <h1>About Us</h1>
-                <p>We are revolutionizing tremor management with our Wearable IoT-Based Anti-Tremor Band. Our device uses advanced sensor technology and machine learning to accurately detect tremors and apply targeted pressure to the nerves, effectively reducing tremor intensity.</p>
-                <p>Our band continuously monitors tremor patterns and adjusts its response in real-time to provide tailored relief, empowering individuals to lead fuller lives. With our innovative solution, we aim to enhance the quality of life for those affected by tremors.</p>
-               
+
+            <div class="campuses">
+                <h2>Our Campuses</h2>
+                <div class="campus-grid">
+                    <div class="campus-item">
+                        <h3>Kolkata Campus</h3>
+                        <p>The birthplace of IEM-UEM, known for its state-of-the-art facilities and vibrant academic culture.</p>
+                    </div>
+                    <div class="campus-item">
+                        <h3>Jaipur Campus</h3>
+                        <p>A sprawling campus with cutting-edge infrastructure, fostering research and innovation.</p>
+                    </div>
+                </div>
             </div>
-            <div class="picture">
-                <img class="peoplepic" src="people.png" alt="image" style="height: 330px; width: 520px;">
-            </div>
-        </div>
-    </div>
-<br>
-<br>
-<br>
+        </section>
 
-    <div class="development-section">
-        <h2>Development Phase</h2>
-        <p>Our development phase consists of several key stages:</p>
-        <ul>
-            <li><strong>Research and Design:</strong> Conducting thorough research to identify the best technologies and designs that cater to our target audience's needs.</li>
-            <li><strong>Prototyping:</strong> Creating initial prototypes to test functionalities and gather feedback for improvements.</li>
-            <li><strong>Testing:</strong> Rigorous testing of the product in various conditions to ensure reliability and effectiveness in reducing tremors.</li>
-            <li><strong>Production:</strong> Finalizing the product design and beginning mass production while ensuring quality control.</li>
-            <li><strong>Launch:</strong> Strategically launching the product to our target market and gathering user feedback for future enhancements.</li>
-        </ul>
+        <section class="contact-us">
+            <h2>Get In Touch</h2>
+            <p>Ready to embark on an educational journey with IEM-UEM? Contact us to learn more about admissions, courses, and opportunities.</p>
+            <button>Contact Us</button>
+        </section>
     </div>
-<br>
-<br>
-<br>
-
-    <div class="timeline-section">
-        <h2>Timeline</h2>
-        <div class="timeline">
-            <div class="timeline-year">2024</div>
-            <div class="timeline-event top">Project conception and initial brainstorming sessions.</div>
-            <div class="timeline-event bottom">Completed the research phase and developed the first prototype.</div>
-            <div class="timeline-event top">Conducted user testing and made necessary adjustments to the design.</div>
-            <div class="timeline-event bottom">Final prototype approved and production planning initiated.</div>
-            <div class="timeline-event top">Scheduled product launch and marketing campaigns.</div>
-        </div>
-    </div>
-
-    <div class="foot"></div>
 </body>
 </html>
+

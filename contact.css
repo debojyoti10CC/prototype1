@@ -103,7 +103,7 @@ ul li {
 
 .navbar-brand {
     font-size: 2rem;
-    color: #599862;;
+    color: #9ae945;;
     margin-top: -10px;
 }
 
@@ -122,7 +122,7 @@ ul li {
 }
 
 .navbar-menu li a.active {
-    border-bottom: 2.5px solid #599862;;
+    border-bottom: 2.5px solid #9ae945;;
 }
 
 .navbar-user {

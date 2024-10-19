@@ -29,8 +29,8 @@
 }
 
 .navbar-brand {
-    font-size: 24px;
-    color: #e94560;
+    font-size: 2rem;
+    color: #599862;
 }
 
 .navbar-menu {
@@ -47,7 +47,7 @@
 }
 
 .navbar-menu li a.active {
-    border-bottom: 2px solid #e94560;
+    border-bottom: 2.5px solid #599862;
 }
 
 .navbar-user {

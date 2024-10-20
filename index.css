@@ -1,0 +1,149 @@
+:root {
+    --primary-color: #00ff00;
+    --background-color: #001a00;
+    --text-color: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.circle-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.neon-button {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    text-align: center;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#contact-form input, #contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.neon-icon {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: text-shadow 0.3s ease;
+}
+
+.neon-icon:hover {
+    text-shadow: 0 0 10px var(--primary-color);
+}
+:root {
+    --primary-color: #00ff00;
+    --background-color: #001a00;
+    --text-color: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+
+.neon-button {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 99;
+}
+
+.error {
+    border-color: red !important;
+}
+
+/* Add more global styles as needed */
+
+.pp{
+    background-image: url(pp2.png);
+    height: 40px;
+    width: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -40px;
+    margin-left: 20px;
+  }
+
+.profile{
+    margin-top: 50px;
+  
+    
+  }
